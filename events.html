@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- EVENTS PAGE meta -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Events — Heart in Action</title>
+  <meta name="description" content="Discover Heart in Action events at uOttawa and how to participate or support.">
+  <meta property="og:title" content="Events — Heart in Action">
+  <meta property="og:description" content="Discover Heart in Action events at uOttawa and how to participate or support.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/logo.png">
+  <meta property="og:url" content="events.html">
+  <link rel="icon" href="assets/logo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site" role="banner">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Heart in Action home">
+        <img src="assets/logo.png" alt="Heart in Action logo" />
+        <span>Heart in Action</span>
+      </a>
+      <nav aria-label="Primary">
+        <a href="index.html" id="nav-home">Home</a>
+        <a href="events.html" id="nav-events">Events</a>
+        <a href="members.html" id="nav-members">Members</a>
+        <a class="btn" href="https://beacons.ai/hiauottawa?fbclid=PAZXh0bgNhZW0CMTEAAafIm-ZlK3354Sp22azSzqADfl3DneTXTmqKB3BRBUOaUugkko8sE33KtSPsww_aem_6sXvdQtdM379cLB2VOEFag" target="_blank" rel="noopener">Join us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" id="main">
+    <div class="card">
+      <h1>Events</h1>
+      <p>We keep this page updated as we add events. To add more, simply edit <code>data/events.json</code> on GitHub (no coding tools required).</p>
+    </div>
+    <section id="eventsGrid" class="events" aria-live="polite"></section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container footer-inner">
+      <small>© <span id="year"></span> Heart in Action — University of Ottawa</small>
+      <div class="social" aria-label="Social and contact">
+        <a href="https://www.instagram.com/hia.uottawa/" target="_blank" rel="noopener">Instagram</a>
+        <a href="mailto:abelsaddik@gmail.com">Email</a>
+        <a href="https://beacons.ai/hiauottawa?fbclid=PAZXh0bgNhZW0CMTEAAafIm-ZlK3354Sp22azSzqADfl3DneTXTmqKB3BRBUOaUugkko8sE33KtSPsww_aem_6sXvdQtdM379cLB2VOEFag" target="_blank" rel="noopener">Join us</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
