@@ -1,0 +1,28 @@
+[
+  {
+    "title": "Crumbl Cookie Sale!",
+    "date": "Friday, Sept 26",
+    "location": "CRX 528, uOttawa",
+    "image": "assets/event-placeholder.jpg",
+    "description": "Sweet start to the semester: we sold fresh Crumbl cookies to raise funds for a local homeless charity. Thanks to everyone who stopped by, donated, and spread the word! Photos coming soon."
+  },
+  {
+    "title": "Reserved — Event Slot #2",
+    "date": "TBD",
+    "location": "Campus",
+    "image": "assets/event-placeholder.jpg",
+    "description": "Placeholder for your next event. Duplicate this block to add more."
+  },
+  {
+    "title": "Reserved — Event Slot #3",
+    "date": "TBD",
+    "location": "Campus",
+    "image": "assets/event-placeholder.jpg",
+    "description": "Placeholder for your next event."
+  }
+]
+// HOW TO ADD EVENTS
+// 1) Duplicate one of the objects above (between { ... }).
+// 2) Change the values: title, date, location, description, and image path.
+// 3) If you upload your own photo to /assets, update the "image" value to that file name.
+// 4) Save/Commit on GitHub — the Events page will update automatically.
