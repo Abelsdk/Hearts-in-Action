@@ -84,8 +84,8 @@ p{margin:8px 0}
 .event{display:grid;gap:10px}
 .event img {
   width: 100%;
-  height: auto;       /* keeps the original image ratio */
-  object-fit: contain;
+  height: 400px;      /* was 180px */
+  object-fit: cover;
   border-radius: 12px;
   border: 1px solid #eee;
 }
