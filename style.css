@@ -1,1 +1,104 @@
-<!-- Hearts in Action css components -->
+/* ===========================================================================
+   Heart in Action — Global Styles (Beginner-Friendly Comments)
+   ---------------------------------------------------------------------------
+   GOAL: Clean, modern, accessible, and responsive design using pure CSS.
+   NOTES:
+   - Design tokens (colors, radii, shadows) make branding easy to tweak.
+   - Focus styles + skip link help keyboard/screen-reader users.
+   - Grids adapt to mobile/desktop without a framework.
+============================================================================ */
+
+/* 1) DESIGN TOKENS — single source of truth */
+:root{
+  --brand:#8b1d1d;         /* Primary deep red from your logo */
+  --brand-2:#b02a2a;       /* Slightly brighter red used as gradient/accent */
+  --text:#1f2937;          /* Neutral dark text (gray-800) for strong contrast */
+  --muted:#6b7280;         /* Secondary text color (gray-500) */
+  --bg:#fffaf9;            /* Warm off-white background to soften the red */
+  --card:#ffffff;          /* Card background */
+  --ring:rgba(139,29,29,.25); /* Focus/hover ring tint */
+  --radius:16px;           /* Standard corner radius */
+  --shadow: 0 10px 30px rgba(0,0,0,.08); /* Soft elevation */
+}
+
+/* 2) LIGHT RESET + TYPOGRAPHY */
+*{box-sizing:border-box}
+html:focus-within{scroll-behavior:smooth}
+html,body{
+  margin:0;padding:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.6;
+}
+:focus{outline:3px solid var(--ring); outline-offset:2px}
+
+/* Skip link improves accessibility for keyboard users */
+.skip-link{
+  position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
+}
+.skip-link:focus{
+  left:16px; top:16px; width:auto; height:auto; background:#fff; padding:10px 14px; border-radius:10px; z-index:999;
+}
+
+/* Layout wrapper */
+.container{max-width:1100px;margin:0 auto;padding:24px}
+
+/* 3) HEADER + NAV */
+header.site{
+  position:sticky; top:0; z-index:50;
+  background:var(--card);
+  border-bottom:1px solid #eee;
+  backdrop-filter:saturate(180%) blur(6px); /* subtle premium feel */
+}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text);font-weight:800;letter-spacing:.1px}
+.brand img{width:44px;height:44px;border-radius:999px}
+nav a{color:var(--text);text-decoration:none;padding:10px 14px;border-radius:12px;font-weight:600}
+nav a.active, nav a:hover{background:#f7f7f7}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:14px;background:var(--brand);color:white;text-decoration:none;font-weight:700;border:none;cursor:pointer;box-shadow:var(--shadow)}
+.btn:hover{background:var(--brand-2)}
+
+/* 4) UTILITIES */
+.grid{display:grid;gap:24px}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center; padding:40px 0}
+.card{background:var(--card);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);border:1px solid #eee}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.kpi{padding:18px;border-radius:14px;border:1px solid #eee;background:#fff}
+
+/* Headings: balanced sizes for readability */
+h1{font-size:44px;line-height:1.1;margin:0 0 8px}
+h2{font-size:28px;margin:0 0 14px}
+h3{font-size:20px;margin:0 0 6px}
+p{margin:8px 0}
+
+.badge{background:#f4e8e8;color:var(--brand);padding:6px 10px;border-radius:999px;font-weight:700;display:inline-block}
+.meta{color:var(--muted);font-size:.95rem}
+
+/* 5) PROGRESS BAR (goal tracker) */
+.progress{background:#f3f4f6;border-radius:999px;overflow:hidden;height:18px;border:1px solid #e5e7eb}
+.progress__bar{height:100%;width:0;background:linear-gradient(90deg,var(--brand),var(--brand-2));transition: width .6s ease-in-out}
+
+/* 6) EVENTS GRID */
+.events{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+.event{display:grid;gap:10px}
+.event img{width:100%;height:180px;object-fit:cover;border-radius:12px;border:1px solid #eee}
+.event .meta{color:var(--muted);font-size:.95rem}
+
+/* 7) MEMBERS GRID */
+.members{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px}
+.member-card{display:grid;gap:10px;place-items:start}
+.member-card img{width:100%;height:220px;object-fit:cover;border-radius:14px;border:1px solid #eee}
+.member-card .links a{margin-right:10px}
+
+/* 8) FOOTER */
+footer{margin-top:60px;border-top:1px solid #eee;background:#fff}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:20px 0}
+.social a{margin-right:12px;text-decoration:none}
+
+/* 9) RESPONSIVE BREAKPOINTS */
+@media (max-width:900px){.hero{grid-template-columns:1fr}.kpis{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.kpis{grid-template-columns:1fr}}
+
+/* 10) RESPECT REDUCED-MOTION PREFERENCE */
+@media (prefers-reduced-motion: reduce){html:focus-within{scroll-behavior:auto}.progress__bar{transition:none}}
