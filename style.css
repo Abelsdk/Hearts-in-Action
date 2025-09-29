@@ -102,3 +102,7 @@ footer{margin-top:60px;border-top:1px solid #eee;background:#fff}
 
 /* 10) RESPECT REDUCED-MOTION PREFERENCE */
 @media (prefers-reduced-motion: reduce){html:focus-within{scroll-behavior:auto}.progress__bar{transition:none}}
+
+/* Clean list utility used on Home */
+ul.clean{padding-left:18px}
+ul.clean li{margin:6px 0}
