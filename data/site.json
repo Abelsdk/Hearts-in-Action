@@ -4,10 +4,3 @@
   "eventsRun": 1,
   "volunteers": 10
 }
-// HOW TO USE
-// - Edit these numbers directly on GitHub to update the site without touching code.
-// - app.js will read this file and update the progress bar and KPIs on the Home page.
-// - goal: your annual fundraising target in CAD.
-// - raised: current total raised in CAD.
-// - eventsRun: count of events completed so far this year.
-// - volunteers: estimated active volunteer count.
