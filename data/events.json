@@ -21,8 +21,3 @@
     "description": "Placeholder for your next event."
   }
 ]
-// HOW TO ADD EVENTS
-// 1) Duplicate one of the objects above (between { ... }).
-// 2) Change the values: title, date, location, description, and image path.
-// 3) If you upload your own photo to /assets, update the "image" value to that file name.
-// 4) Save/Commit on GitHub — the Events page will update automatically.
