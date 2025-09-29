@@ -1,1 +1,161 @@
-<head>Hearts in Action</head>
+<!doctype html>
+<html lang="en">
+<head>
+  <!--
+    ======================================================================
+    Heart in Action — HOME PAGE (index.html)
+    ----------------------------------------------------------------------
+    This is the landing page. It includes:
+      - A hero section that explains the club
+      - A dynamic fundraising progress bar
+      - KPI counters (events run, volunteers, total raised)
+      - Quick links to Events and ways to Connect
+
+    HOW DYNAMIC CONTENT WORKS
+    - We do NOT hard-code numbers here. Instead, app.js loads data from
+      /data/site.json and injects values (goal, raised, KPIs) into this page.
+    - That keeps content easy to update on GitHub without touching HTML.
+
+    PRO TOUCHES
+    - SEO/OG meta for rich sharing previews (configured in <head>)
+    - JSON-LD (Organization) to look legit to search engines
+    - Accessibility: skip link, ARIA on progress bar, visible focus, good contrast
+  ======================================================================
+  -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Heart in Action — uOttawa</title>
+  <meta name="description" content="Heart in Action turns campus energy into relief for people in need through creative, accountable fundraising.">
+  <!-- Open Graph for rich link previews -->
+  <meta property="og:title" content="Heart in Action — uOttawa">
+  <meta property="og:description" content="Heart in Action turns campus energy into relief for people in need through creative, accountable fundraising.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/logo.png">
+  <meta property="og:url" content="index.html">
+  <link rel="icon" href="assets/logo.png">
+  <link rel="stylesheet" href="style.css">
+  <!-- JSON-LD: basic Organization schema (helps with Google knowledge panels, etc.) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Heart in Action",
+    "url": "index.html",
+    "logo": "assets/logo.png",
+    "sameAs": ["https://www.instagram.com/hia.uottawa/"]
+  }
+  </script>
+</head>
+<body>
+  <!-- Skip link improves keyboard navigation -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!--
+    HEADER: Shared across pages (duplicated in events.html and members.html)
+    - The active nav link is handled by app.js based on current file name
+  -->
+  <header class="site" role="banner">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Heart in Action home">
+        <img src="assets/logo.png" alt="Heart in Action logo" />
+        <span>Heart in Action</span>
+      </a>
+      <nav aria-label="Primary">
+        <a href="index.html" id="nav-home">Home</a>
+        <a href="events.html" id="nav-events">Events</a>
+        <a href="members.html" id="nav-members">Members</a>
+        <!-- "Join us" goes to Beacons page -->
+        <a class="btn" href="https://beacons.ai/hiauottawa?fbclid=PAZXh0bgNhZW0CMTEAAafIm-ZlK3354Sp22azSzqADfl3DneTXTmqKB3BRBUOaUugkko8sE33KtSPsww_aem_6sXvdQtdM379cLB2VOEFag" target="_blank" rel="noopener">Join us</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="container" id="main">
+    <!-- HERO SECTION: explains who you are + goal tracker -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="card">
+        <span class="badge">From Campus to Communities</span>
+        <h1 id="hero-title">Heart in Action</h1>
+        <p>
+          We mobilize uOttawa students to fight hunger and hardship—locally and globally—through creative fundraising and partnerships.
+        </p>
+        <!-- Fundraising Goal Widget
+             How it works:
+             - app.js reads numbers from data/site.json (easy to edit on GitHub)
+             - it calculates percentage and animates the bar width
+        -->
+        <div class="callout">
+          <strong>Annual Fundraising Goal:</strong>
+          <div class="grid" style="grid-template-columns:1fr auto;align-items:center;gap:12px;margin-top:8px">
+            <!-- ARIA role makes this accessible to assistive tech -->
+            <div class="progress" role="progressbar" aria-label="Funds raised toward goal" aria-valuemin="0" aria-valuemax="100">
+              <div class="progress__bar"></div>
+            </div>
+            <div id="goalPct" style="min-width:48px;text-align:right;font-weight:700">0%</div>
+          </div>
+          <!-- Labels bound by JS -->
+          <div style="display:flex;gap:12px;margin-top:8px">
+            <div><small>Raised</small><div id="raisedAmount" style="font-weight:700"></div></div>
+            <div><small>Goal</small><div id="goalAmount" style="font-weight:700"></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="grid">
+        <!-- KPIs: quick stats you can update in data/site.json -->
+        <div class="kpis" aria-label="Key figures">
+          <div class="kpi">
+            <div class="meta">Events Run</div>
+            <h2 id="kpiEvents">1</h2>
+          </div>
+          <div class="kpi">
+            <div class="meta">Active Volunteers</div>
+            <h2 id="kpiVolunteers">10</h2>
+          </div>
+          <div class="kpi">
+            <div class="meta">Funds Raised</div>
+            <h2 id="kpiRaised">$0</h2>
+          </div>
+        </div>
+        <div class="card">
+          <h2>What we do</h2>
+          <ul class="clean">
+            <li>Run fun, purposeful fundraisers on campus.</li>
+            <li>Partner with local and global charities.</li>
+            <li>Build student leadership in event design and nonprofit skills.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid" style="margin-top:10px">
+      <div class="card">
+        <h2>Upcoming &amp; Past Events</h2>
+        <p>See <a href="events.html">Events</a> for highlights and how to participate.</p>
+      </div>
+      <div class="card">
+        <h2>Connect</h2>
+        <p>
+          Follow us on <a href="https://www.instagram.com/hia.uottawa/" target="_blank" rel="noopener">Instagram</a>, email
+          <a href="mailto:abelsaddik@gmail.com">abelsaddik@gmail.com</a>, or <a href="https://beacons.ai/hiauottawa?fbclid=PAZXh0bgNhZW0CMTEAAafIm-ZlK3354Sp22azSzqADfl3DneTXTmqKB3BRBUOaUugkko8sE33KtSPsww_aem_6sXvdQtdM379cLB2VOEFag" target="_blank" rel="noopener">Join us</a>.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER (shared across pages) -->
+  <footer role="contentinfo">
+    <div class="container footer-inner">
+      <small>© <span id="year"></span> Heart in Action — University of Ottawa</small>
+      <div class="social" aria-label="Social and contact">
+        <a href="https://www.instagram.com/hia.uottawa/" target="_blank" rel="noopener">Instagram</a>
+        <a href="mailto:abelsaddik@gmail.com">Email</a>
+        <a href="https://beacons.ai/hiauottawa?fbclid=PAZXh0bgNhZW0CMTEAAafIm-ZlK3354Sp22azSzqADfl3DneTXTmqKB3BRBUOaUugkko8sE33KtSPsww_aem_6sXvdQtdM379cLB2VOEFag" target="_blank" rel="noopener">Join us</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript loaded at the end for performance -->
+  <script src="app.js"></script>
+</body>
+</html>
