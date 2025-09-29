@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Abdul Rahman El Saddik",
+    "role": "Co-founder",
+    "linkedin": "https://www.linkedin.com/in/abdul-rahman-el-saddik-586060378/",
+    "email": "abelsaddik@gmail.com",
+    "photo": "assets/member-placeholder.jpg"
+  },
+  { "name": "Founder #2", "role": "Co-founder", "photo": "assets/member-placeholder.jpg" },
+  { "name": "Founder #3", "role": "Co-founder", "photo": "assets/member-placeholder.jpg" },
+  { "name": "Founder #4", "role": "Co-founder", "photo": "assets/member-placeholder.jpg" }
+]
+// HOW TO UPDATE FOUNDERS
+// - Replace placeholder names with real ones.
+// - Add LinkedIn and email if desired.
+// - Upload photos to /assets and set the "photo" value to the filename.
